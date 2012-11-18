@@ -1,4 +1,7 @@
 UsagamisoRe::Application.routes.draw do
+  resources :votes
+  resources :teams
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
