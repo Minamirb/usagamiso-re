@@ -17,11 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :team_id %><br />
-    <%= f.number_field :team_id %>
+    <%= collection_select(:vote,:team_id,Team.all,:id,:name) %>
   </div>
   <div class="field">
     <%= f.label :sata %><br />
-    <%= f.number_field :sata %>
+    <%= select(:vote,:sata,(1..10).to_a)%>
   </div>
   <div class="actions">
     <%= f.submit %>
