@@ -1,6 +1,12 @@
 UsagamisoRe::Application.routes.draw do
-  resources :votes
   resources :teams
+  resources :votes 
+  root :to => 'votes#index'
+  
+  # 最終的にはこんな感じで一括ですべてのチームの評価を更新したい
+  # get 'vote' => 'votes#index'
+  # get 'vote/edit' => 'votes#edit'
+  # post 'vote' => 'votes#update'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -51,7 +57,7 @@ UsagamisoRe::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  #root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 
