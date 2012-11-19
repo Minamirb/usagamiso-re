@@ -1,7 +1,7 @@
 UsagamisoRe::Application.routes.draw do
   resources :teams
   resources :votes 
-  root :to => 'votes#index'
+  root :to => 'teams#index'
   
   # 最終的にはこんな感じで一括ですべてのチームの評価を更新したい
   # get 'vote' => 'votes#index'
