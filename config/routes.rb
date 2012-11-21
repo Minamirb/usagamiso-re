@@ -1,5 +1,8 @@
+# -*- coding: utf-8 -*-
 UsagamisoRe::Application.routes.draw do
-  resources :teams
+  resources :teams do
+    get 'summary', :only => :show
+  end
   resources :votes 
   root :to => 'teams#index'
   
