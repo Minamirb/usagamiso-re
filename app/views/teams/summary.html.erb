@@ -8,5 +8,10 @@
   <%= @team.comment %>
 </p>
 
+<p>
+  <strong>Summary:</strong>
+  <%= @votes.map{|v| v.sata}.inject(:+).to_i %>
+</p>
+
 
 <%= link_to 'Back', teams_path %>
