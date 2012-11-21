@@ -1,4 +1,9 @@
 class TeamsController < ApplicationController
+  def summary
+    @team = Team.find(params[:team_id])
+    @votes = @team.votes
+  end
+
   # GET /teams
   # GET /teams.json
   def index
