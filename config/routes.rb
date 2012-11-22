@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 UsagamisoRe::Application.routes.draw do
+  get "welcome/demonstration"
   resources :teams do
     get 'summary', :only => :show
   end
