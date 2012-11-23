@@ -1,4 +1,6 @@
 class TeamsController < ApplicationController
+  before_filter :to_login, :except => :index
+
   def summary
     @team = Team.find(params[:team_id])
     @votes = @team.votes

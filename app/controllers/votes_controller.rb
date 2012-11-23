@@ -1,4 +1,5 @@
 class VotesController < ApplicationController
+  before_filter :to_login
   # GET /votes
   # GET /votes.json
   def index
