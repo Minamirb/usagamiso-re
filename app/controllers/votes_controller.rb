@@ -40,17 +40,34 @@ class VotesController < ApplicationController
   # POST /votes
   # POST /votes.json
   def create
-    @vote = Vote.new(vote_params)
+    # @vote = Vote.new(vote_params)
+    params[:vote].each do |id, attr|
+      data = Vote.where(:user_id=>current_user.id,:team_id=>id).first
+      @vote = data ? data : Vote.new
+      @vote.team_id = id.to_i
+      @vote.user_id = current_user.id
+      @vote.sata= attr['sata'].to_i
+      @vote.save
+    end
 
     respond_to do |format|
-      if @vote.save
+      # if @vote.save
         format.html { redirect_to @vote, notice: 'Vote was successfully created.' }
-        format.json { render json: @vote, status: :created, location: @vote }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @vote.errors, status: :unprocessable_entity }
-      end
+        # format.json { render json: @vote, status: :created, location: @vote }
+      # else
+        # format.html { render action: "new" }
+        # format.json { render json: @vote.errors, status: :unprocessable_entity }
+      # end
     end
+    # respond_to do |format|
+      # if @vote.save
+        # format.html { redirect_to @vote, notice: 'Vote was successfully created.' }
+        # format.json { render json: @vote, status: :created, location: @vote }
+      # else
+        # format.html { render action: "new" }
+        # format.json { render json: @vote.errors, status: :unprocessable_entity }
+      # end
+    # end
   end
 
   # PATCH/PUT /votes/1
