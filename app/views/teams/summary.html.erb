@@ -1,17 +1,26 @@
+<link href='http://fonts.googleapis.com/css?family=Galindo' rel='stylesheet' type='text/css'>
+<%= link_to 'Back', teams_path %>
+
 <p>
   <strong>Name:</strong>
   <%= @team.name %>
-</p>
-
-<p>
+  &nbsp;&nbsp;
   <strong>Comment:</strong>
   <%= @team.comment %>
 </p>
 
-<p>
-  <strong>Summary:</strong>
+<input type="button" value='表示' id="start_view">
+
+<%= image_tag("sataandagi.png", id: "sweets_base") %>
+<%= image_tag("with_choco.png", id: "choco") %>
+<%= image_tag("with_arazan.png", id: "arazan") %>
+<%= image_tag("cream.png", id: "cream", size: "310x311") %>
+<%= image_tag("with_stroberry.png", id: "berry", size: "248x279") %>
+<%= image_tag("candle_blue.png", id: "candle_b", size: "243x300") %>
+<%= image_tag("candle_red.png", id: "candle_r", size: "243x300") %>
+<%= image_tag("orange.png", id: "orange", size: "204x167") %>
+<%= image_tag("apple.png", id: "apple", size: "373x203") %>
+
+<div id="sum_sata">
   <%= @votes.map{|v| v.sata}.inject(:+).to_i %>
-</p>
-
-
-<%= link_to 'Back', teams_path %>
+</div>
