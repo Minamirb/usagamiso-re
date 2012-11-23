@@ -15,7 +15,7 @@ group :assets do
   #gem 'coffee-rails', :git => 'git://github.com/rails/coffee-rails.git', :branch => '3-2-stable'
   gem 'sass-rails',   github: 'rails/sass-rails'
   gem 'coffee-rails', github: 'rails/coffee-rails'
-
+  gem 'therubyracer', platforms: :ruby
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -23,3 +23,6 @@ gem 'jquery-rails'
 
 gem 'omniauth'
 gem 'omniauth-twitter'
+
+gem "less-rails",              github: 'metaskills/less-rails'
+gem "twitter-bootstrap-rails", github: 'seyhunak/twitter-bootstrap-rails'
