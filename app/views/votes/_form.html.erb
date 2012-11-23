@@ -10,19 +10,19 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id%>
-  </div>
-  <div class="field">
-    <%= f.label :team_id %><br />
-    <%= f.collection_select(:team_id,Team.all,:id,:name) %>
-  </div>
-  <div class="field">
-    <%= f.label :sata %><br />
-    <%= f.select(:sata,(1..10).to_a)%>
-  </div>
+  <table>
+    <tr>
+      <th>チーム名 </th>
+      <th>得点</th>
+    </tr>
+    <% @teams.each do |t|%>
+    <tr>
+      <td><%= t.name %></td>
+      <td><%= select("vote#{[t.id]}","sata",(1..5).to_a)%></td>
+      <td><%= hidden_field "team_id", t.id %></td>
+    </tr>
+    <% end %>
+  </table>
   <div class="actions">
     <%= f.submit %>
   </div>
