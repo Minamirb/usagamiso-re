@@ -86,6 +86,6 @@ class VotesController < ApplicationController
     # Use this method to whitelist the permissible parameters. Example: params.require(:person).permit(:name, :age)
     # Also, you can specialize this method with per-user checking of permissible attributes.
     def vote_params
-      params.require(:vote).permit(:twitter_id, :team_id, :sata)
+      params.require(:vote).permit(:user_id, :team_id, :sata)
     end
 end

@@ -14,7 +14,7 @@
 
   <tbody>
     <%= content_tag_for(:tr, @votes) do |vote| %>
-        <td><%= vote.twitter_id %></td>
+        <td><%= vote.user_id %></td>
         <td><%= vote.team_id %></td>
         <td><%= vote.sata %></td>
         <td><%= link_to 'Show', vote %></td>
