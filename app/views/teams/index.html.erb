@@ -24,6 +24,6 @@
 
 <%= link_to 'New Team', new_team_path %>
 <br />
-<%= link_to '投票結果', {:controller => "votes" ,:action=>"index"}%>
+<%= link_to '投票結果', votes_path %>
 <br />
-<%= link_to '投票する', {:controller => "votes" ,:action=>"new"}%>
+<%= link_to '投票する', new_vote_path %>

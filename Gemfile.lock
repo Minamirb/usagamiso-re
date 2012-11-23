@@ -6,7 +6,7 @@ GIT
 
 GIT
   remote: git://github.com/rails/arel.git
-  revision: 890eaf4784fb6b4ee9e1a8f167f6a9b28525722e
+  revision: 04dbdd97b102585f7b3bc17824a71ca087c7ad09
   specs:
     arel (3.0.2.20120819075748)
 
@@ -26,11 +26,11 @@ GIT
 
 GIT
   remote: git://github.com/rails/rails.git
-  revision: 02e368413301b9b60a29b9c8d901185e29e479ba
+  revision: 43dd9c87fd4c2054297a30b46e283ec69d17f30e
   specs:
     actionmailer (4.0.0.beta)
       actionpack (= 4.0.0.beta)
-      mail (~> 2.4.4)
+      mail (~> 2.5.2)
     actionpack (4.0.0.beta)
       activesupport (= 4.0.0.beta)
       builder (~> 3.1.0)
@@ -87,24 +87,35 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    hashie (1.2.0)
     hike (1.2.1)
     i18n (0.6.1)
     jquery-rails (2.1.3)
       railties (>= 3.1.0, < 5.0)
       thor (~> 0.14)
     json (1.7.5)
-    mail (2.4.4)
+    mail (2.5.2)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.19)
-    minitest (4.2.0)
+    minitest (4.3.0)
     multi_json (1.3.7)
+    oauth (0.4.7)
+    omniauth (1.1.1)
+      hashie (~> 1.2)
+      rack
+    omniauth-oauth (1.0.1)
+      oauth
+      omniauth (~> 1.0)
+    omniauth-twitter (0.0.14)
+      multi_json (~> 1.3)
+      omniauth-oauth (~> 1.0)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-test (0.6.2)
       rack (>= 1.0)
-    rake (10.0.1)
+    rake (10.0.2)
     rdoc (3.12)
       json (~> 1.4)
     sass (3.2.3)
@@ -137,6 +148,8 @@ DEPENDENCIES
   coffee-rails!
   journey!
   jquery-rails
+  omniauth
+  omniauth-twitter
   rails!
   sass-rails!
   sqlite3
