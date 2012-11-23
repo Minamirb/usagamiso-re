@@ -52,22 +52,15 @@ class VotesController < ApplicationController
 
     respond_to do |format|
       # if @vote.save
-        format.html { redirect_to @vote, notice: 'Vote was successfully created.' }
+      @test= Vote.where(:user_id=>current_user.id)
+        format.html { redirect_to @test, notice: 'Vote was successfully created.' }
+        format.html { render action: "show" }
         # format.json { render json: @vote, status: :created, location: @vote }
       # else
         # format.html { render action: "new" }
         # format.json { render json: @vote.errors, status: :unprocessable_entity }
       # end
     end
-    # respond_to do |format|
-      # if @vote.save
-        # format.html { redirect_to @vote, notice: 'Vote was successfully created.' }
-        # format.json { render json: @vote, status: :created, location: @vote }
-      # else
-        # format.html { render action: "new" }
-        # format.json { render json: @vote.errors, status: :unprocessable_entity }
-      # end
-    # end
   end
 
   # PATCH/PUT /votes/1

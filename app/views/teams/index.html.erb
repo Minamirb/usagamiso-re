@@ -1,10 +1,10 @@
-<h1>Listing teams</h1>
+<h1>エントリーチーム</h1>
 
 <table>
   <thead>
     <tr>
-        <th>Name</th>
-        <th>Comment</th>
+      <th>名前</th>
+      <th>コメント</th>
       <th></th>
       <th></th>
     </tr>
@@ -12,18 +12,17 @@
 
   <tbody>
     <%= content_tag_for(:tr, @teams) do |team| %>
-        <td><%= team.name %></td>
-        <td><%= team.comment %></td>
-      <td><%= link_to 'Edit', edit_team_path(team) %></td>
+      <td><%= team.name %></td>
+      <td><%= team.comment %></td>
+      <td><%= link_to '更新', edit_team_path(team) %></td>
       <td><%= link_to '集計', team_summary_path(team) %></td>
     <% end %>
   </tbody>
 </table>
 
-<br />
 
-<%= link_to 'New Team', new_team_path %>
 <br />
-<%= link_to '投票結果', votes_path %>
-<br />
-<%= link_to '投票する', new_vote_path %>
+<% if @user%>
+<%= link_to '投票する', new_user_vote_path(@user.id) %>
+<% end %>
+
