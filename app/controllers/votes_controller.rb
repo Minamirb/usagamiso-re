@@ -26,7 +26,8 @@ class VotesController < ApplicationController
   # GET /votes/new
   # GET /votes/new.json
   def new
-    @vote = Vote.new
+    @user = User.find(params[:user_id])
+    @vote = @user.votes.new
     @teams = Team.all
     respond_to do |format|
       format.html # new.html.erb
@@ -42,6 +43,7 @@ class VotesController < ApplicationController
   # POST /votes
   # POST /votes.json
   def create
+    @user = User.find(params[:user_id])
     # @vote = Vote.new(vote_params)
     params[:vote].each do |id, attr|
       data = Vote.where(:user_id=>current_user.id,:team_id=>id).first
@@ -54,7 +56,7 @@ class VotesController < ApplicationController
 
     respond_to do |format|
       if @vote.save
-        format.html { redirect_to @vote, notice: 'Vote was successfully created.' }
+        format.html { redirect_to user_votes_path(@user) }
         format.json { render json: @vote, status: :created, location: @vote }
       else
         format.html { render action: "new" }

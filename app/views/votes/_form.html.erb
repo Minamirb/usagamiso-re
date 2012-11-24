@@ -1,4 +1,4 @@
-<%= form_for(@vote) do |f| %>
+<%= form_for([@user, @vote]) do |f| %>
   <% if @vote.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@vote.errors.count, "error") %> prohibited this vote from being saved:</h2>
@@ -12,15 +12,13 @@
   <% end %>
   <table>
     <tr>
-      <th>チーム名 </th>
+      <th>チーム名</th>
       <th>得点</th>
-      <th>コメント </th>
     </tr>
     <% @teams.each do |t|%>
     <tr>
       <td><%= t.name %></td>
       <td><%= select("vote#{[t.id]}","sata",(1..5).to_a)%></td>
-      <td><%= t.comment%></td>
       <td><%= hidden_field "team_id", t.id %></td>
     </tr>
     <% end %>
