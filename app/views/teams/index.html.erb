@@ -1,5 +1,5 @@
-<h1>エントリーチーム</h1>
-
+<h1>沖縄RailsHackathon2012<br />エントリーチーム</h1>
+<br />
 <table>
   <thead>
     <tr>
@@ -14,8 +14,10 @@
     <%= content_tag_for(:tr, @teams) do |team| %>
       <td><%= team.name %></td>
       <td><%= team.comment %></td>
-      <td><%= link_to '更新', edit_team_path(team) %></td>
-      <td><%= link_to '集計', team_summary_path(team) %></td>
+      <% if current_user %>
+        <td><%= link_to '更新', edit_team_path(team) %></td>
+        <td><%= link_to '集計', team_summary_path(team) %></td>
+      <% end %>
     <% end %>
   </tbody>
 </table>
