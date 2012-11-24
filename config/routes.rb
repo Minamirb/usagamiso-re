@@ -4,15 +4,14 @@ UsagamisoRe::Application.routes.draw do
   resources :teams do
     get 'summary', :only => :show
   end
-  resources :votes 
+  resources :users do
+    resources :votes 
+  end
+
   root :to => 'teams#index'
   get "/auth/:provider/callback" => "sessions#callback"
   get "/logout" => "sessions#destroy", :as => :logout
 
-  # 最終的にはこんな感じで一括ですべてのチームの評価を更新したい
-  # get 'vote' => 'votes#index'
-  # get 'vote/edit' => 'votes#edit'
-  # post 'vote' => 'votes#update'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

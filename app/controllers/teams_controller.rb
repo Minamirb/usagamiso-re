@@ -10,7 +10,7 @@ class TeamsController < ApplicationController
   # GET /teams.json
   def index
     @teams = Team.all
-
+    @user = current_user ? User.find_by_id(current_user.id) : nil
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @teams }
