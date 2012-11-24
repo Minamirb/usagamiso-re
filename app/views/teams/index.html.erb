@@ -7,6 +7,7 @@
       <th>コメント</th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -16,7 +17,8 @@
       <td><%= team.comment %></td>
       <% if current_user %>
         <td><%= link_to '更新', edit_team_path(team) %></td>
-        <td><%= link_to '集計', team_summary_path(team) %></td>
+        <td>&nbsp;&nbsp;</td>
+        <td><%= link_to '結果！', team_summary_path(team) %></td>
       <% end %>
     <% end %>
   </tbody>
@@ -25,6 +27,7 @@
 
 <br />
 <% if @user%>
-<%= link_to '投票する', new_user_vote_path(@user.id) %>
+  <%= link_to '【投票する】', new_user_vote_path(@user.id) %>
 <% end %>
 
+<%= link_to '（デモを見る）', welcome_demonstration_path %>

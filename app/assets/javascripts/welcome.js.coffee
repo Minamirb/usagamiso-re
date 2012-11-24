@@ -1,5 +1,5 @@
 jQuery ($) ->
-  $('#start_demo').click ->
+  $('#start_demo').on "click", ->
 
     sum = $("#get_number").val()
 
@@ -103,4 +103,8 @@ jQuery ($) ->
 
     setTimeout ()->
       $("#sum_sata").css("display", "inline")
+    , text_up
+
+    setTimeout ()->
+      $("#sum_number").html(sum)
     , text_up
